@@ -13,7 +13,7 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error, max_error, mean_absolute_percentage_error
 
 # --- Page Config ---
-st.set_page_config(page_title="WGS Reactor Digital Twin", layout="wide", page_icon="🏭")
+st.set_page_config(page_title="Bioethanol to H2 Digital Twin", layout="wide", page_icon="🏭")
 
 # --- Custom CSS ---
 st.markdown("""
@@ -214,6 +214,15 @@ if uploaded_file is not None:
         st.divider()
         st.header("🧪 Process Optimizer")
         
+        with st.expander("ℹ️ How this Optimizer Works (SLSQP)", expanded=False):
+            st.markdown("""
+            This tool uses **Sequential Least Squares Programming (SLSQP)**, a gradient-based optimization algorithm.
+            
+            1.  **The Map:** It treats your trained AI model as a mathematical landscape.
+            2.  **The Climber:** It calculates the "slope" (gradient) of the model to determine which direction improves the target.
+            3.  **The Guardrails:** It strictly obeys the **Min/Max constraints** you set below. It will never suggest values outside your safety limits.
+            4.  **The Goal:** It iteratively adjusts the inputs until it finds the precise peak (Maximum) or valley (Minimum).
+            """)
         col_opt1, col_opt2 = st.columns([1, 2])
         
         with col_opt1:
