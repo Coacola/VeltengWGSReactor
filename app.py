@@ -24,7 +24,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🏭 WGS Reactor Digital Twin & Optimizer Version 4.2.0")
+st.title("🏭 Bioethanol to H2 Plant Digital Twin & Optimizer Version 4.2.0")
 st.markdown("Train a surrogate model, validate physics (Histograms, Learning Curves), and **optimize**.")
 st.markdown("Developed by VeltEng")
 # --- Sidebar: Configuration ---
